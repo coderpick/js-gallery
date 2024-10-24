@@ -12,13 +12,46 @@ body {
   width: 80%;
   margin: 20px auto;
 }
+/* Style for the gallery container */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+  gap: 20px; /* Space between grid items */
+  padding: 20px; /* Padding around the gallery */
 }
+
+/* Style for each gallery item */
+.gallery-item {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect for gallery items */
+.gallery-item:hover {
+  transform: translateY(-10px);
+}
+
+/* Style for images */
 .gallery-item img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  object-fit: cover;
+  display: block;
+}
+
+/* Style for image author name */
+.gallery-item h3 {
+  padding: 10px;
+  font-size: 1.2em;
+  color: #333;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
 }
